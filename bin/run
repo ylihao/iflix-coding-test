@@ -1,3 +1,12 @@
 #!/bin/bash
 
-echo "You complete me"
+CURRENT=`pwd`
+BASENAME=`basename "$CURRENT"`
+
+# get the directory where the app is executed
+if [ "$BASENAME" == "iflix_coding_test" ]
+then 
+    node ./lib/get_iflix_subscriptions.js
+else
+    node ../lib/get_iflix_subscriptions.js
+fi
